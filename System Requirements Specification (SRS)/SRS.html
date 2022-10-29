@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>Software Requirement Specification</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  
+  <style>
+  body {
+      position: relative;
+  }
+  ul.nav-pills {
+      position:fixed;
+  }
+  div.col-8 div {
+      height: 200px;
+  }
+  .navbar{
+  color: black;
+}
+.navbar .col-sm-2 .col-4 .bg-dark{
+  color: black;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;
+}
+caption {
+  color: black;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+    .sidebar-color { 
+    background-color:#f7f7f7; 
+  } 
+</style>
+</head>
+<body style="background-color:#fafafa; color:black" data-spy="scroll" data-target="#myScrollspy" data-offset="1">
+<nav class="navbar navbar-expand-sm bg-light navbar-light">
+  <!-- Brand/logo -->
+ 
+  <img style="width:15%"></img>
+  <header class="page header text-white"><h1 style="padding-left:10px;
+     color: #6637C5;">Software Requirement Specification </h1></header>
+
+  <!-- Links -->
+
+
+</ul>
+</nav>
+
+<div class="wrapper">
+  <div class="sidebar">
+
+        
+          
+          <div class="container-fluid">
+            <div class="row">
+              <nav class="col-sm-2 col-4 sidebar-color" id="myScrollspy" >
+                <ul class="nav nav-pills flex-column">
+                  <li class="nav-item">
+                    <a class="nav-link " href="#section0.0">Cover Page</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Introduction</a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="#sec1.1">Purpose</a>
+                      <a class="dropdown-item" href="#sec1.2">Document Convention</a>
+                      <a class="dropdown-item" href="#sec1.3">Intended Audience and<br> Reading Suggestions</a>
+                      <a class="dropdown-item" href="#sec1.4">Product Scope</a>
+                      <a class="dropdown-item" href="#sec1.5">References</a>
+                    </div>
+                  </li>
+          
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Overall Description</a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="#sec2.1">Product Perspective</a>
+                      <a class="dropdown-item" href="#sec2.2">Product Functions</a>
+                      <a class="dropdown-item" href="#sec2.3">User Classes and<br> Characteristics</a>
+                      <a class="dropdown-item" href="#sec2.4">Operating Environment</a>
+                      <a class="dropdown-item" href="#sec2.5">Design and Implementation<br> Constraints</a>
+                      <a class="dropdown-item" href="#sec2.6">User Documentation</a>
+                      <a class="dropdown-item" href="#sec2.7">Assumptions and<br> Dependencies</a>
+                    </div>
+                  </li>
+          
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">External Interface<br>Requirements</a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="#sec3.1">User Interfaces</a>
+                      <a class="dropdown-item" href="#sec3.2">Hardware Interfaces</a>
+                      <a class="dropdown-item" href="#sec3.3">Software Interfaces</a>
+                      <a class="dropdown-item" href="#sec3.4">Communications Interfaces</a>
+                    </div>
+                  </li>
+          
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">System Features</a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="#sec4.1">UML Use Case Diagram</a>
+                      <a class="dropdown-item" href="#sec4.2">UML Extended Use Cases</a>
+                      
+                     
+                    </div>
+                  </li>
+          
+                   <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Other Nonfunctional<br>Requirements</a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="#sec5.1">Performance Requirements</a>
+                      <a class="dropdown-item" href="#sec5.2">Safety Requirements</a>
+                      <a class="dropdown-item" href="#sec5.3">Security Requirements</a>
+                      <a class="dropdown-item" href="#sec5.4">Software Quality Attributes</a>
+                      <a class="dropdown-item" href="#sec5.5">Business Rules</a>
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                <a class="nav-link " href="#section6">Other Requirements</a>
+                  </li>
+          
+          
+                </ul>
+    </nav>
+
+    <div style="padding-top:30px; padding-left:30px; padding-right:150px;" class="col-sm-10 col-8">
+
+
+      <h2 style="color: #6637C5;">0. Cover Page</h2>
+      <center>
+    
+      <p>
+      <h3 id="section0.0">Software Requirements Specification</h3>
+      <br>
+      <h5>for</h5>
+      <br>
+        <h5>E-Learning and Student Cohoet</h5>
+        <br>
+      
+        <h5> Version 1.0.1</h5>
+        <br>
+      
+          <table>
+            <caption align="center" style="caption-side: top; width: auto; text-align: center;"> <b>Prepared By</b>
+            </caption>
+      
+            <tr>
+              <td><b>Name</b></td>
+              <td><b>ID</b></td>
+            </tr>
+            <tr>
+                <td>Md Kawser Ahmad</td>
+                <td>1722103042</td>
+              </tr>
+            <tr>
+              <td>Musfique-us-Salehin Arnob</td>
+              <td>1813020642</td>
+            </tr>
+            <tr>
+              <td>Zarrin Muskan</td>
+              <td>2014288042</td>
+      
+            </tr>
+            <tr>
+              <td>Mohammed Ashraful Islam Chowdhury </td>
+              <td>2014318642</td>
+            </tr>
+          </table>
+          <br>
+          <h5>CSE327 Section-2</h5><br>
+          <h5>Project: E-learning and Student Cohert</h5><br>
+          <h5>Date: October 29, 2022</h5> </p>
+          </center>
+          <br><br><br><br>
+	
+	
+	
+  <!-- Section-1 -->
+
+	
+        <h2 style="color: #6637C5;">1. Introduction</h2>
+        <h4 id="sec1.1">1.1 Purpose</h4>
+        <p>“E-learning” system is a platform where teachers analyzes the students’ performances through taking a 
+          quiz online. This platform enables the teachers to practically distinguish the class performances and the 
+          difficulty of the quizzes through a histogram statistics. This system ensures the exams are taken fairly and 
+          within the given time maintaining standard conditions for an exam.</p>
+
+        <h4 id="sec1.2">1.2 Document Convention</h4>
+        <p>The SRS document contains standard use of words with paragraphs containing headers, sub-headers and table 
+          formation along with attached screenshots.</p>
+        
+        <h4 id="sec1.3">1.3 Intended Audience and Reading Suggestions</h4>
+        <p>The primary intended audience of this SRS document are the project team members and our course instructor. 
+          This document is simply organized for any software developers or technology related people to understand it 
+          easily.</p>
+
+        <h4 id="sec1.4">1.4 Product Scope</h4>
+        <p>The platform enables the teachers and students to interact virtually through a website where they can login 
+          using their personal Gmail account. Also, there is an app for this system where the students can give exam and 
+          the teachers can report and view it as well. The goal for this system is to let any institution take online 
+          examination if there is any pandemic or any natural occurances.Also,maintaing the standard procedures of taking
+          an exam like scanning the face of a student, timer countdown, eye movement tracking and using Gmail accounts 
+          which ensures fair examination policies and evading any unfair advantages of taking the examination by any 
+          other means.Also,the android app support will allow the students and teachers to interact if they are unable 
+          to use the website for any cause so they can directly interact the platform using their smartphones.</p> 
+
+        <h4 id="sec1.5">1.5 References</h4>
+            <p><a href="https://medium.com/geekculture/how-to-use-cohorts-in-your-software-ed642f19574">https://medium.com/geekculture/how-to-use-cohorts-in-your-software-ed642f19574</a></p>
+            <p><a href="http://grammarly.com">http://grammarly.com</a></p>
+        <br><br><br>
+
+
+
+        <!-- Section-2 -->
+
+        <h2 style="color:#6637C5;">2. Overall Description</h2>
+        <p> 
+        <h4 id="sec2.1">2.1 Product Perspective</h4>
+        <p>The idea of this system is inspired from the previous area-wise lockdown enforced all over Bangladesh as a 
+          counter measure to the pandemic. The idea of this system is a combination of both google classroom and 
+          google meet together but in a more advanced way with a lot more features and security. The idea of this 
+          system is mostly designed for education purposes. This system tries to conduct the best online exams, as it 
+          has many features for the teachers to conduct a fair exam. This system is mostly useful for institutions like 
+          school or private classes or even home tutoring</p>
+        
+        
+        <h4 id="sec2.2">2.2 Product Functions</h4>
+        <p>The major features of the system are as follows:
+        <ul>
+          <p><b>System:</b></p>
+          <li>Register as Teacher or Student using google mail.</li>
+          <li>Login and Logout</li>
+          <li>Face detection feature</li>
+          <li>Automated Marking system</li>
+          <li>Attendance system</li>
+          <li>Makes statistics of students</li>
+          </ul>
+          </p>
+
+          <ul>
+            <p><b>Teachers:</b></p>
+            <li>Teachers can post study materials for the students to view only and sit for exams.</li>
+            <li>Teachers can conduct exams online</li>
+            <li>Teachers can watch students during exam using eye detection</li>
+            <li>Teachers can evaluate students and see student cohorts and also view their performance.</li>
+            <li>A mobile app for the teachers to check notifications</li>
+            </ul>
+            </p>
+
+          <ul>
+              <p><b>Students:</b></p>
+              <li>Students can attend quiz( MCQ, Text  answer, Voice).</li>
+              <li>Students can only view Study materials or question during the quiz where the pages will be divided 
+                into sub page level.</li>
+              <li>Start time and End time feature.</li>
+              </ul>
+              </p>
+          
+        
+        
+        <h4 id="sec2.3">2.3 User Classes and Characteristics</h4>
+        <p>As this system is totally based on online teaching and learning, this system targets the education 
+          management like any institution, private coaching or even home tutoring, where the teachers and the 
+          students are the ones to interact with our systems’ website.</p>
+          <p><u>Based on technical expertise</u>: </p>
+        <p><table style="width:100%">
+          <tr align="center">
+            <th>User class</th>
+            <th>Characteristic</th> 
+            <th>Example</th>
+          </tr>
+          <tr>
+            <td>Teachers</td>
+            <td>Can post materials for the students to view only and conduct exams and also see the statistics of the 
+              student’s performance.</td>
+            <td>
+              <ul>
+                <li>Monitor how much time the student is taking to read per page.</li>
+                <li>Teachers will have a cohort view where they can see the average time taken for the students 
+                  to complete their exam and a histogram that shows performance of every students marks.</li>
+                <li> Teachers will get notified if the student is not looking at the screen or not sitting properly 
+                  during the exam using eye detection.</li>
+                <li>An app is made for the teachers for their convenience to use it from anywhere.</li>
+                <li>Teachers don’t have to give marks manually, there will be automated marking system.</li>
+              </ul>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Student</td>
+            <td>Can view the questions only and sit for the exam after completing all the verification process.</td>
+            <td>
+              <ul>
+                <li>Students will have to scan their ID and Face for verification for legitimacy</li>
+                <li>Students can only view questions which will be divided into subpage design.</li>
+                <li>Students can only use app for notifications about their exam and performance.</li>
+                <li>They can only check the marks but cannot see which part of the answer is wrong unlike the teachers.</li>
+              </ul>
+            </td>
+          </tr>
+        </table>
+        </p>
+        <p>Initially the app/website will ask if the user is a student or a teacher? And then they will sign in 
+          with their respective emails.</p><br />
+
+        <h4 id="sec2.4">2.4 Operating Environments</h4>
+        <p><u>Android App</u>:</p>  
+        <ol>
+          <li>Device Hardware – 
+          	<ul>
+          	<li> “Android compatible” device.[1] </li>
+          	</ul>
+          
+          <li> Operating System – Android 5.1 (Lolipop) or above. </li>
+          <li> Software Component – Google Play Services, Sinch Android SDK. </li>
+        </ol>
+          <p><u>Website</u>: Any browser that runs html, css and javascript.</p>
+        
+        
+        <h4 id="sec2.5">2.5 Design and Implementation Constraints</h4>
+        <p><ul>
+        	<li>Students’ legitimacy is a concern, since anyone can sit for the quiz, though there is face and ID 
+            verification.</li>
+          	<li>Online exams might be unfair or unreliable, though their will be eye detection for the teachers to 
+              monitor the students’.</li>
+          	<li>Users bad webcam and speaker quality can hamper teachers monitoring during exam or hard for face 
+              recognition.</li>
+          	<li>The basic (free) version API/SDKs, database, hosting service that are used allow a threshold amount of 
+              usage. It is important to note that their functionalities are essential for the system.</li>
+          	<li>Since the Android OS is open source, it’s implementation differs from manufacturer to manufacturer. 
+              Certain features of our app may not function smoothly due to restrictions put in the OS implementation</li>
+          	<li>The App/website requires user permission for working with components like- fetching location, 
+              microphone-speaker access, camera access etc.</li>
+          	<li>The core features require continuous active internet connection.</li>
+          	<li>The basic use of this system is only education purpose where the teachers and their students are the only 
+              users</li>
+        </ul></p>
+        
+        
+        <h4 id="sec2.6">2.6 User Documentation</h4>
+        <p>A demo video of the app and website usage will be available to the users. No
+          documented manual is to be provided.</p>
+        
+        
+        <h4 id="sec2.7">2.7 Assumptions and Dependencies</h4>
+        <p>Assumptions: <br>
+        <ul>
+    <li>Teachers and Students phones have working camera/webcam, microphone, speaker and/or headphone/earphone 
+              connectivity.</li>
+		<li>Each user needs their own google accounts.</li>
+		<li>Each user needs to give access to all system requirements.</li>
+        </ul></p>
+        <p>Dependencies:</p>
+        <ul>
+        	<li>Users need to have google play services installed on their android phones.</li>
+        </ul>
+
+<br><br><br>
+
+
+  <!-- Section-3 -->
+
+
+ <h2 style="color:#6637C5">3. External Interface</h2>
+ <h4 id="sec3.1">3.1 User Interfaces</h4>
+ <p>The UI of the app is designed in such a way that any cohort/sub-cohort can interact with the application comfortably.
+   When the cohort/sub-cohort launches the app for the first time, the landing page welcomes the cohort/sub-cohort with 
+   "Sign Up (Get Started)" or "Sign In" option.</p><br>
+   <p>The "Sign In" option will land the cohort/sub-cohort to the "Login" page where existing cohort/sub-cohort can use their credentials (e.g., email and password) to log in.</p>
+ <img class="center" height = "450" width="300" src="Login.png" alt=""><br><br>
+
+ <p>For the new cohort/sub-cohort, the "Sign Up" option will take them to a page where they have to enter their email and password to create their account.</p>
+ <img class="center" height = "450" width="300" src="signup.png" alt=""> <br>
+
+ <p>After the successful verification, the cohort/sub-cohort must have to set their profile by providing necessary information in the "Setup Profile" page (Example: picture for sub-cohort).</p>
+ <img class="center" height = "450" width="300" src="profilesetup.jpg" alt=""><br><br>
+ <p>Completing a successful setup will redirect the cohort/sub-cohort to the internal system Page.</p>
+ <img class="center" height = "450" width="300" src="internal_interface.png" alt=""><br><br>
+
+ <p>Now cohort can assign sub-cohort to different sections.</p>
+ <img class="center" height = "450" width="300" src="add_members.png" alt=""><br><br>
+ <p>Cohort will upload pdf reading materials and which will be non downloadable for sub-cohort. </p>
+ <img class="center" height = "450" width="300" src="file_upload.png" alt=""><br><br>
+
+ <p>The system will divide the reading materials into different sub-part to make the reading easy for the eye of the sub-cohort, and reading materials will be non-downloadable.</p>
+ <img class="center" height = "450" width="300" src="sub_part_divition.png" alt=""><br><br>
+ <p> Before the sub-cohort start, the reading materials system will check for sub-cohorts so that system can track the reading statistic of reading materials means how much time the sub-cohort reads the materials, not wasting his/her time. To increase the productivity of the sub-cohort and there will be a time limit for every material.</p>
+ <img class="center" height = "450" width="300" src="in_front_of_computer.png" alt=""> <br> <br>
+
+ <p>After the end of every material, there will be a quiz to test the sub-cohort understanding. The sub-cohort will be able to see the marks of his quiz at the end of the quiz.</p>
+ <img class="center" height = "450" width="300" src="test_options_timer.png" alt=""> <br>
+ 
+
+ <p>On the app interface cohort will be able to see the individual time spent and total time spent on each section of materials by every sub-cohort. Moreover, the cohort will see the percentage of mistakes by sub-cohort in each section and the total percentage of mistakes made by sub-cohorts.</p>
+ <p > <b> Individual time spending: </b></p>
+ <img class="center" height = "450" width="300" src="individual_page_time_spending.png" alt=""><br><br>
+ <p > <b> Total time spending:</b></p>
+ <img class="center" height = "450" width="300" src="total_time_spend.png" alt=""><br><br>
+
+<br>
+<h5>
+<u>Prototype links</u>-
+<a target="_blank" href="https://demo.elearning23.com/">E-lerning Web Interface</a> 
+
+</h5> 
+
+<br>
+
+ <h4 id="sec3.2">3.2 Hardware Interfaces</h4>
+ <p>The device that will run the application requires WIFI to read the materials and take the quiz. The device also needs the camera for the sub-cohort to detect the time the sub-cohort reads the materials.</p>
+
+ <h4 id="sec3.3">3.3 Software Interfaces</h4>
+ <p>The minimum android operating system version required to run the application is "Lolipop5.1 (API level 22)".  The application will work properly on any device with the latest (from android 5.1 to 12) android operating system.</p>
+ <p>The third-party software components that are going to be used are,
+ <ul>
+   <li>Migration scripts: A scripts have to run on the database to add the necessary data to run a cohort. This works well for this types of cohorts (static cohorts).</li>
+   <li>Pdf splitter api (PDF.co) </li>
+   <li>Ageitgey/face_recognition (GitHub Repository) </li>
+   <li>Voice to text Recognition API (Google ML kit) </li>
+   <li>Java based Android App</li>
+   <li>Relational database (user registration)</li>
+ </ul> 
+ </p>
+
+ <h4 "id="sec3.4">3.4 Communications Interfaces</h4>
+ <p>Ageitgey/face_recognition is used to detect the face of sub-cohort using internet connections. Voice-to-text Recognition API and pdf splitter API is used for different Purpose.</p>
+ <br><br><br>
+ 
+
+<!-- Section-4 -->
+
+
+<h2 style="color:#6637C5;">4. System Features</h2>
+<p>This section includes the requirements that describe all the essential functions of the system.
+
+<br><br>
+<h4 id="sec4.1">4.1 Use Case Diagram </h4>
+<img class="center" height = "464" width="641" src="Teacher-StudentCASE DIAGRAM.png" alt=""><br><br>
+<img class="center" height = "682" width="701" src="Teacher-System Case Diagram.png" alt=""><br><br>
+<img class="center" height = "701" width="461" src="Student-System Case Diagram.png" alt=""><br><br>
+
+
+<br><br><br>
+<h4 id="sec4.2">4.2.1 Create an account </h4> 
+<p> <u>Use case name</u>: Create an account</p>
+<p> <u>Use case type</u>: Primary.</p>
+<p> <u>Actors</u>: Teacher,Student.</p>
+<p> <u>Brief Description</u>:Sign up using G-mail account with the app.</p>
+
+<table>
+  <caption align= "center" style="caption-side: top; width: auto; text-align: center;"> <b>Typical Course of Action</b></caption>
+  <tr>
+    <th>Actor Action </th>
+    <th>System Response</th>
+  </tr>
+
+  <tr>
+    <td>1. Open the app.</td>
+    <td>2. Check if this is the first time. If so, show the sign up page.</td>
+  </tr>
+
+  <tr>
+    <td>3. Select sign up and enter the G-mail account</td>
+    <td>4. Show G-mail account entry page.</td>
+  </tr>
+
+  <tr>
+    <td>5. Enter the G-mail account and press verify. </td>
+    <td>6. Send verification code in G-mail account and show enter verification code page with a timer.</td>
+  </tr>
+
+  <tr>
+    <td>7. Enter verification code.</td>
+    <td>8. Check entered code and then take to the profile.</td>
+  </tr>
+
+  <tr>
+    <td>9. Enter necessary information.</td>
+    <td>10. Store all the given information.</td>
+  </tr>
+
+  <tr>
+    <td>11. Then click the sign up button.</td>
+    <td>12. Show loading dialog, store all info to database and then show home screen.</td>
+  </tr>
+
+</table>
+<br>
+
+  <p style=" text-align: center;"> <b>Alternate Course of Action</b>
+  </p>  
+  <p>6.1 User inputs invalid G-mail account, show toast “invalid email” and a red exclamation mark.</p>
+  <p>8.1 Verification code entry duration times out. Go back to G-mail account entry page.</p>
+  <p>8.2 Wrong verification code entered. Show toast “invalid code”.</p>
+  <p>8.3 User attempts to enter wrong verification and/or timer times out a threshold number of times 
+    (this is set by the authentication API used). Show error dialog “too many attempts! try again at least 24 
+    hours later” and close the app.</p>
+  <p>8.4 User doesn’t receive any code in set duration, user requests a resend code. The process is repeated.</p>
+  <p>11.1 Empty input fields and/or invalid entries. Mark the corresponding input fields in red and show “invalid 
+    input” on each field.</p>
+    
+
+  <br><br>
+
+  <h4 id="sec4.2.2">4.2.2 Login & Logout </h4>
+  <p> <u>Use case name</u>: Login, logout</p>
+  <p> <u>Use case type</u>: Primary.</p>
+  <p> <u>Actors</u>: Teacher,Student.</p>
+  <p> <u>Brief Description</u>: Login to the app with registered G-mail account and password.</p>
+
+<table>
+  <caption align="center" style="caption-side: top; width: auto; text-align: center;"> <b>Typical Course of Action</b>
+  </caption>
+  <tr>
+    <th>Actor Action </th>
+    <th>System Response</th>
+  </tr>
+
+  <tr>
+    <td>1. Open the app.</td>
+    <td>2. Check if this is the first time. If not, show login page.</td>
+  </tr>
+
+  <tr>
+    <td>3. Enter email and password.</td>
+    <td>4. Check the username and password and then show home page.</td>
+  </tr>
+
+  <tr>
+    <td>5. Pick the dashboard from the menu bar.</td>
+    <td>6. Show the dashboard page.</td>
+  </tr>
+
+  <tr>
+    <td>7. Pick Accounts from the menu bar and Logout.</td>
+    <td>8. Logout user and show login page again.</td>
+  </tr>
+</table>
+
+  <br>
+  
+  <p style=" text-align: center;"> <b>Alternate Course of Action</b>
+  </p>
+
+  <p>4.1 Email and passwords don’t match any user registered. Show toast “wrong email and/or password.Check please.” 
+    make the input fields border red.</p>
+  <p>4.2 No internet connection. Show toast “You are not connected to the internet!”.</p>
+
+  <br><br>
+
+
+
+<h4 id="sec4.2.3">4.2.3 Authentication Service </h4>
+<p> <u>Use case name</u>: Authentication Service.</p>
+<p> <u>Use case type</u>: Secondary.</p>
+<p> <u>Actors</u>: Teacher, Student.</p>
+<p> <u>Brief Description</u>: Can view the list of learning materials, student’s cohoets, questions etc.</p>
+
+<table>
+  <caption align="center" style="caption-side: top; width: auto; text-align: center;"> <b>Typical Course of Action</b>
+    <p style="text-align: center;">(Actions & Responses for Sign-up and Login are the same as mentioned in 4.1, 4.2 these are not repeated here. But to get
+    to this point login or sign up must be completed first.)</p>
+  </caption>
+  <tr>
+    <th>Actor Action </th>
+    <th>System Response</th>
+  </tr>
+
+  <tr>
+    <td>1. Login/Sign-up just completed or User is already logged in and opens the app.</td>
+    <td>2. Present the homepage.</td>
+  </tr>
+
+  <tr>
+    <td>3. In the homepage, press on the menu bar.</td>
+    <td>4. In the menu bar, it shows the lists of student’s cohorts, assignments etc.</td>
+  </tr>
+
+  <tr>
+    <td>5. Press on the “Student’s Cohorts”. 	</td>
+    <td>6. It shows all the students enrolled for that course. </td>
+  </tr>
+
+  <tr>
+    <td>7. Go back to the home page and logout from account.</td>
+    <td>8. User is logged out and shows login page again.</td>
+  </tr>
+
+  </table>
+
+<br>
+<p  style="text-align: center;"> <b>Alternate Course of Action</b>
+</p>
+<p>(Alternate course of action for Sign-up and Login are the same as mentioned in 4.1, 4.2 these are not repeated here. But
+to get to this point login or sign up must be completed first.)</p>
+<p>None.</p>
+
+<br><br>
+
+<h4 id="sec4.2.4">4.2.4 App’s Service to Teacher</h4>
+<p> <u>Use case name</u>: App’s Service to Teacher</p>
+<p> <u>Use case type</u>: Secondary</p>
+<p> <u>Actors</u>: Teacher.</p>
+<p> <u>Brief Description</u>:After login/sign-up, teacher can see the student’s reports, attendance etc and monitor 
+  them. </p>
+
+<table>
+  <caption align="center" style="caption-side: top; width: auto; text-align: center;"> <b>Typical Course of Action</b>
+  <p style="text-align: center;">(Actions & Responses for Sign-up and Login are the same as mentioned in 4.1, 4.2 these
+    are not repeated here. But to get
+    to this point login or sign up must be completed first.)</p>
+  </caption>
+  <tr>
+    <th>Actor Action </th>
+    <th>System Response</th>
+  </tr>
+
+  <tr>
+    <td>1. Login/Sign-up just completed or User is already logged in and opens the app.</td>
+    <td>2. Present the home screen and a menu option on top left and search box on top right.</td>
+  </tr>
+
+  <tr>
+    <td>3. Search for a student’s name in the search and box and check student’s report.</td>
+    <td>4. Present the student’s report in the screen.</td>
+  </tr>
+
+  <tr>
+    <td>5. Go back to the homepage and logout from account.</td>
+    <td>6. Logout user and show login page again.</td>
+  </tr>
+</table>
+
+<br>
+<p style="text-align: center;"> <b>Alternate Course of Action</b></p>
+<p>(Alternate course of action for Sign-up and Login are the same as mentioned in 4.1, 4.2 
+  these are not repeated here. But
+to get to this point login or sign up must be completed first.)</p>
+<p>None.</p>
+
+<br><br>
+
+<h4 id="sec4.2.5">4.2.5 App’s Service to Student </h4>
+<p> <u>Use case name</u>: App’s Service to Student.</p>
+<p> <u>Use case type</u>: Secondary.</p>
+<p> <u>Actors</u>: Student.</p>
+<p> <u>Brief Description</u>: Upon successful login/signup student can only view and read the documents and also 
+  can see the documents while giving the quiz. </p>
+
+<table>
+  <caption align="center" style="caption-side: top; width: auto; text-align: center;"> <b>Typical Course of Action</b>
+    <p style="text-align: center;">(Actions & Responses for Sign-up and Login are the same as mentioned in 4.1, 4.2
+      these
+      are not repeated here. But to get
+      to this point login or sign up must be completed first.)</p>
+  </caption>
+  <tr>
+    <th>Actor Action </th>
+    <th>System Response</th>
+  </tr>
+
+  <tr>
+    <td>1. Login/Sign-up just completed or User is already logged in and opens the app.</td>
+    <td>2.Show the home page for student.</td>
+  </tr>
+
+  <tr>
+    <td>3. Press “Assignment” tab.</td>
+    <td>4. Show the assignments.</td>
+  </tr>
+
+  <tr>
+    <td>5. Read the assignments.</td>
+    <td>6. Start time starts and notifies the student.</td>
+  </tr>
+
+  <tr>
+    <td>7. After finish reading tick on “I have finished reading”</td>
+    <td>8. End time ends and notifies the student and takes the student to the quiz section.</td>
+  </tr>
+
+  <tr>
+    <td>9. Student takes the quiz.</td>
+    <td>10. While the student gives the quiz, the system detects the student’s eyes for how long it starred on 
+      the screen.</td>
+  </tr>
+
+  <tr>
+    <td>11. Student then submits the quiz.</td>
+    <td>12. After submitting automated markings is done.</td>
+  </tr>
+  </table>
+
+  <br>
+  <p style="text-align: center;"> <b>Alternate Course of Action</b></p>
+<p>(Alternate course of action for Sign-up and Login are the same as mentioned in 4.1, 4.2 
+  these are not repeated here. But
+to get to this point login or sign up must be completed first.)</p>
+<p>None.</p>
+
+<br> <br> <br>
+
+
+<h2 style="color:#6637C5;">5. Other Nonfunctional Requirements</h2>
+        <h4 id="sec5.1">5.1 Performance Requirements</h4>
+        <p>For this platform, there is no performance requirements for the website application as it can run in any 
+          browsers that can run html, css and JavaScript. The app version can run in any android compatible device with 
+          the 5.1 Lolipop version and above. The real time system is designed such a way that there is no delay in time 
+          and interaction between the users and the platform. The UI is precise and gives the users a smooth user 
+          experience.</p>
+        
+        <h4 id="sec5.2">5.2 Safety Requirements</h4>
+        <p>There are no safety requirements in this system as this is an E-Learning platform so the system is capable 
+          enough to ensure a better user-friendly experience.</p>
+
+        <h4 id="sec5.3">5.3 Security Requirements</h4>
+        <p>The users must have to identify themselves while logging in as the system has face detection so any other 
+          person impersonating will be detected.Also, they have to login using their personal Gmail accounts to sign in 
+          and have to verify their account from their Gmail inbox. For students, the system is designed to eye movements 
+          so they have to place the camera in the middle and their face should be eye level in the center of the screen 
+          while attending the exam. If they look away from the screen or looking somewhere for a long time will report 
+          back to the teachers.</p>
+
+        <h4 id="sec5.4">5.4 Software Quality Attributes</h4>
+        <p>It is user friendly and have no maintenance problem whatsoever.</p>
+
+        <h4 id="sec5.5">5.5 Business Rules</h4>
+        <p>For the website version,</p>
+        <p>Students can login using their Gmail account, read the material and attend the exam within a given time.
+          Teachers can observe, analyze,summarize each student activities and also their results and report back.</p>
+        <p>For app version,</p>
+        <p>Students can login and attend the quiz and get notifications of starting and ending time.Teachers can only 
+          report and navigate it.This system is free for both website and android version which doesn’t require any money 
+          for purchasing the service.</p>
+
+
+
+
+        <br><br><br>
+
+        <h2 style="color:#6637C5;" id="section6">6. Other Requirements</h2>
+        <p>One extra requirement of this project is to be inline with the latest technology trends and 
+          make sure it is a software worthy of the next era. We have taken global research and advisory firm – 
+          GreyCampus website’s predictions as guideline to achieve this:-</p>
+
+        <p>According to GreyCampus the leading technologies in the software industries for this era are- AI, ML, 
+          Cybersecurity, VR, AR, block-chain, intelligent search features. Their most recent prediction consists 
+          of 10 technology trends for the ear 2022 which include- multi- experience, AI security etc. 
+          The “E-learning System and Student Cohoet” system somewhat adheres to a few of these predictions 
+          in its features. Such as-</p>
+        
+        <ol>
+        	<li><u>Multi-experience</u>:Using these technology, this platform lets the teacher to monitor their 
+            student’s performance and the teacher will know if the student is cheating or not. The system makes 
+            easier for the teacher to catch the student who is cheating.</li><br>
+        	
+        	<li><u>AI</u>:  The system uses google play services.</li><br>
+
+        <h3>Appendix A: Glossary</h3>
+        <p><table style="width:100%">
+          <tr align="center">
+            <th>Term</th>
+            <th>Definition</th>
+          </tr>
+          <tr>
+            <td>System</td>
+            <td>The whole platform consisting of app and website.</td>
+          </tr>
+          
+          <tr>
+            <td>Teacher</td>
+            <td>A person who teaches and monitor its student and evaluate them accordingly.</td>
+          </tr>
+          
+          <tr>
+            <td>Student-Cohoets</td>
+            <td>A group of person who is studying and do its assignments assigned by its respective teachers.</td>
+          </tr>
+          
+          <tr>
+            <td>Quiz-Statistics</td>
+            <td>A histogram is drawn where it shows the performance of the students.</td>
+          </tr>
+          
+          <tr>
+            <td>Reading Activity Report</td>
+            <td>Teacher can see these in the navigation bar where it will show the reports of each students.</td>
+          </tr>
+          
+          </table></p>
+
+
+<br><br><br>
+
+      <div style="padding-top:20px;" class="row">
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
