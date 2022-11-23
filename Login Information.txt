@@ -1,6 +1,0 @@
-Create login page.
-Take students all information including picture on input feild.
-There are will dropdown menu to select the students and teachers individually.
-Get the data from input field.
-save the data to RDBMS using backend.
-Query the data to make cohort using all data saved in the RDBMS.
