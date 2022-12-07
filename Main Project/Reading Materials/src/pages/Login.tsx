@@ -9,12 +9,13 @@ import { useStore } from '../hooks/useStore';
 import Profile from '../components/Profile';
 
 
-function Login () {
-  
+
+function Login() {
+
   const { authData } = useStore();
 
   const setAuthData = useStore((state: any) => state.setAuthData);
- 
+
 
   return (
 
@@ -55,10 +56,7 @@ function Login () {
                     />
                   </div>
 
-                  <Profile />
                 </GoogleOAuthProvider>
-
-
 
               </div>
             </form>
