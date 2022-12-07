@@ -6,14 +6,31 @@ import { GoogleOAuthProvider, GoogleLogin, useGoogleLogin } from '@react-oauth/g
 import axios from 'axios';
 import { useGoogleOneTapLogin } from '@react-oauth/google';
 
-import Google from "../img/Google.png"
+
+import { useStore } from '../hooks/useStore';
+import Profile from '../components/Profile';
+
 
 
 const Login = () => {
+  const { authData } = useStore();
+  const setAuthData = useStore((state: any) => state.setAuthData);
+  const google = () => {
 
+    <GoogleOAuthProvider clientId='368807546907-1bh1fe2vja15rvpotua7c9phnkpin7t2.apps.googleusercontent.com'>
+
+
+
+    </GoogleOAuthProvider>
+
+  };
 
   return (
+
     <div>
+
+      
+      
 
       <div>
         <img className="wave" src="assets/img/wave.png" />
@@ -29,10 +46,30 @@ const Login = () => {
               <h3 className="title">Sign in with google</h3>
               <div className="social-media">
 
+        <GoogleOAuthProvider clientId='368807546907-1bh1fe2vja15rvpotua7c9phnkpin7t2.apps.googleusercontent.com'>
+          <div>
+            <GoogleLogin
+              useOneTap
+              onSuccess={async (credentialResponse) => {
+                const response = await axios.post(
+                  'http://localhost:3001/login',
+                  {
+                    token: credentialResponse.credential,
+                  }
+                );
+                const data = response.data;
 
-                <button className="button button2" >
-                  <i className="fab fa-google" />
-                </button>
+                localStorage.setItem('authData', JSON.stringify(data));
+                setAuthData(data);
+              }}
+              onError={() => {
+                console.log('Login Failed');
+              }}
+            />
+          </div>
+
+          <Profile />
+        </GoogleOAuthProvider>
 
 
 
